@@ -9,7 +9,7 @@ http.createServer(function (req, res) {
  }).listen(process.env.PORT || 8080,() =>console.log('ok')); 
 
 
-server.listen(8080);
+
 var MicroGear = require('microgear');
   const APPID     = "TrainingNP";
   const KEY    = "Oly9Tj8Ko4C3TmL";
