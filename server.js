@@ -1,6 +1,6 @@
 var request = require('request');
 var http = require('http'); 
-var fileSystem = require('fs');
+
 http.createServer(function (req, res) {
    // write the code here if it needs to execute every time
    res.writeHead(200, {'Content-Type': 'text/plain'});
