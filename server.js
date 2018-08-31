@@ -42,18 +42,18 @@ microgear.on("present", function(event) {
   var data = {check:'device status', name: obj.alias, status: obj.type };
   //console.log(data);
   console.log(data);
-request.post(
-    'https://numpapick.herokuapp.com/bot.php',
-    { json:  data  },
+// request.post(
+//     'https://numpapick.herokuapp.com/bot.php',
+//     { json:  data  },
 
 
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log(body)
+//     function (error, response, body) {
+//         if (!error && response.statusCode == 200) {
+//             console.log(body)
 
-        }
-    }
-);
+//         }
+//     }
+// );
 });
 
 microgear.connect(APPID);
