@@ -1,21 +1,14 @@
 var request = require('request');
 var http = require('http'); 
-/* http.createServer(function (req, res) {
+http.createServer(function (req, res) {
    // write the code here if it needs to execute every time
    //res.writeHead(200, {'Content-Type': 'text/plain'});
    //res.end("this is a test page");
-   
+   fs.readFile(__dirname + '/public/index.html', 'utf8', function(err, text){
+        res.send(text);
+    });
 
- }).listen(process.env.PORT || 8080,() =>console.log('ok')); */
-var express = require("express");
-var app     = express();
-var path    = require("path");
-
-
-app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
-  //__dirname : It will resolve to your project folder.
-});
+ }).listen(process.env.PORT || 8080,() =>console.log('ok')); 
 
 var MicroGear = require('microgear');
   const APPID     = "TrainingNP";
