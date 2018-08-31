@@ -4,7 +4,7 @@ http.createServer(function (req, res) {
    // write the code here if it needs to execute every time
    //res.writeHead(200, {'Content-Type': 'text/plain'});
    //res.end("this is a test page");
-   fs.readFile(__dirname + '/index.html', 'utf8', function(err, text){
+   fs.readFile('index.html', 'utf8', function(err, text){
         res.send(text);
     });
 
