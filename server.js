@@ -1,15 +1,30 @@
 var request = require('request');
 var http = require('http'); 
-http.createServer(function (req, res) {
+/*http.createServer(function (req, res) {
    // write the code here if it needs to execute every time
    //res.writeHead(200, {'Content-Type': 'text/plain'});
    //res.end("this is a test page");
-   fs.readFile('index.html', 'utf8', function(err, text){
-        res.send(text);
-    });
+   
 
- }).listen(process.env.PORT || 8080,() =>console.log('ok')); 
+ }).listen(process.env.PORT || 8080,() =>console.log('ok')); */
 
+var fileSystem = require('fs');
+
+var server = http.createServer(function(req, resp){
+	fileSystem.readFile('./index.html', function(error, fileContent){
+		if(error){
+			resp.writeHead(500, {'Content-Type': 'text/plain'});
+			resp.end('Error');
+		}
+		else{
+			resp.writeHead(200, {'Content-Type': 'text/html'});
+			resp.write(fileContent);
+			resp.end();
+		}
+	});
+});
+
+server.listen(8080);
 var MicroGear = require('microgear');
   const APPID     = "TrainingNP";
   const KEY    = "Oly9Tj8Ko4C3TmL";
